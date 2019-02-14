@@ -8,13 +8,14 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "KKExtensions"
-  spec.version      = "0.1"
-  spec.summary      = "A short description of KKExtensions."
+  spec.version      = "0.2"
+  spec.summary      = "Some useful swift extensions"
 
 
   spec.description  = <<-DESC
   Some useful swift extensions:
   * FileManager
+    - getDocumentDirectory
                    DESC
 
 
