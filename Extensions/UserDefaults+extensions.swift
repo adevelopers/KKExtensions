@@ -13,27 +13,27 @@ extension UserDefaults {
         get { return bool(forKey: #function) }
         set { set(newValue, forKey: #function) }
     }
-    
-    var isToolsEnabled: Bool {
+
+    var isTooltipsEnabled: Bool {
         get { return bool(forKey: #function) }
         set { set(newValue, forKey: #function) }
     }
-    
+
     var isQuickRecordEnabled: Bool {
         get { return bool(forKey: #function) }
         set { set(newValue, forKey: #function) }
     }
-    
+
     var runsCount: Int {
         get { return integer(forKey: #function) }
         set { set(newValue, forKey: #function) }
     }
-    
+
     var alreadyReviewedInAppStore: Bool {
         get { return bool(forKey: #function) }
         set { set(newValue, forKey: #function) }
     }
-    
+
     var language: String {
         get { return string(forKey: #function) ?? "" }
         set { set(newValue, forKey: #function) }
