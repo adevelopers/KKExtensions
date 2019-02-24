@@ -8,12 +8,12 @@
 
 import Foundation
 
-extension String {
+public extension String {
     /*
      Truncates the string to the specified length number of characters and appends an optional trailing string if longer.
      - Parameter length: Desired maximum lengths of a string
      - Parameter trailing: A 'String' that will be appended after the truncation.
-     
+
      - Returns: 'String' object.
      */
     func truncate(length: Int, trailing: String = "…") -> String {
@@ -21,7 +21,7 @@ extension String {
     }
 }
 
-extension String {
+public extension String {
 
     func capitalizingFirstLetter() -> String {
         return prefix(1).capitalized + dropFirst()
@@ -30,13 +30,13 @@ extension String {
 }
 
 //get date from string
-extension String {
+public extension String {
     static var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
-    
+
     var date: Date? {
         return String.dateFormatter.date(from: self)
     }
