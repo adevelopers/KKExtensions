@@ -8,8 +8,8 @@
 
 import Foundation
 
-extension UserDefaults {
-    var isInstalledErlier: Bool {
+public extension UserDefaults {
+    var hasLaunchedBefore: Bool {
         get { return bool(forKey: #function) }
         set { set(newValue, forKey: #function) }
     }

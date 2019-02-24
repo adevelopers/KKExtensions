@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIImage {
+public extension UIImage {
 
     func resize(size new: CGSize) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(new, false, 0.0)
