@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "KKExtensions"
-  spec.version      = "0.2"
+  spec.version      = "0.4"
   spec.summary      = "Some useful swift extensions"
 
 
@@ -16,6 +16,8 @@ Pod::Spec.new do |spec|
   Some useful swift extensions:
   * FileManager
     - getDocumentDirectory
+  * Collection
+    - safe
                    DESC
 
 
