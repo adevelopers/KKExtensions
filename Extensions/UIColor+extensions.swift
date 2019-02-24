@@ -9,10 +9,10 @@
 import UIKit
 
 public extension UIColor {
-    
+
     public convenience init(rgb: Int, alpha: CGFloat = 1) {
         let rgbValue = CGFloat(rgb) / 255
-        
+
         self.init(
             red: rgbValue,
             green: rgbValue,
@@ -20,7 +20,7 @@ public extension UIColor {
             alpha: alpha
         )
     }
-    
+
     public convenience init(red: Int, green: Int, blue: Int) {
         self.init(
             red: CGFloat(red) / 255,
@@ -29,27 +29,24 @@ public extension UIColor {
             alpha: 1
         )
     }
-    
+
     public convenience init(hex: String, alpha: CGFloat = 1) {
         // Check for hash and remove the hash
         var cleanedHexString = hex
-        
+
+        // FIXME: cleanedHexString[..<index]
         if cleanedHexString.hasPrefix("#") {
-            cleanedHexString = cleanedHexString.substring(
-                from: cleanedHexString.index(
-                    cleanedHexString.startIndex,
-                    offsetBy: 1
-                )
-            )
+            let index = String.Index(encodedOffset: 1)
+            cleanedHexString = String(cleanedHexString[index...])
         }
-        
+
         // String -> UInt32
         var rgbValue = UInt32()
         Scanner(string: cleanedHexString).scanHexInt32(&rgbValue)
-        
+
         // UInt32 -> R,G,B
         let a, r, g, b: UInt32
-        
+
         switch cleanedHexString.count {
         case 3: // RGB (12-bit)
             (r, g, b) = (
@@ -57,7 +54,7 @@ public extension UIColor {
                 (rgbValue >> 4 & 0xF) * 17,
                 (rgbValue & 0xF) * 17
             )
-            
+
             self.init(
                 red: CGFloat(r) / 255,
                 green: CGFloat(g) / 255,
@@ -70,7 +67,7 @@ public extension UIColor {
                 rgbValue >> 8 & 0xFF,
                 rgbValue & 0xFF
             )
-            
+
             self.init(
                 red: CGFloat(r) / 255,
                 green: CGFloat(g) / 255,
@@ -84,7 +81,7 @@ public extension UIColor {
                 rgbValue >> 8 & 0xFF,
                 rgbValue & 0xFF
             )
-            
+
             self.init(
                 red: CGFloat(r) / 255,
                 green: CGFloat(g) / 255,
@@ -95,5 +92,5 @@ public extension UIColor {
             self.init(white: 1, alpha: alpha)
         }
     }
-    
+
 }
