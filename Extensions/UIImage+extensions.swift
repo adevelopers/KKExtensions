@@ -29,3 +29,13 @@ public extension UIImage {
     }
 
 }
+
+public extension UIImage {
+    func writeToPng(_ url: URL) {
+        do {
+            try self.pngData()?.write(to: url)
+        } catch let error {
+            print("error save png file, ", error.localizedDescription)
+        }
+    }
+}
