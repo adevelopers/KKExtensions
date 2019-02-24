@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "KKExtensions"
-  spec.version      = "0.4"
+  spec.version      = "0.5"
   spec.summary      = "Some useful swift extensions"
 
 
